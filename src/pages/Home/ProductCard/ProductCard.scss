@@ -1,0 +1,65 @@
+@use "../../../assets/scss/" as *;
+
+.product {
+  &__row {
+    margin-top: 98px;
+  }
+
+  &__col {
+    margin-bottom: 12px;
+    position: relative;
+    transition: all 0.35s ease;
+
+    &:hover .product__overlay {
+      opacity: 0.75;
+      visibility: visible;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 22.2%;
+    left: 14%;
+    background-color: #fff;
+    text-align: center;
+    padding: 18.25% 17.4%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    &.overlay-3 {
+      top: 21.3%;
+      left: 14.2%;
+      padding: 8.25% 21.3%;
+    }
+
+    &.overlay-4 {
+      top: 34.8%;
+      left: 15.3%;
+      padding: 8.2% 19.6%;
+    }
+
+    &-title {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #000;
+    }
+
+    &-link {
+      font-size: 14px;
+      color: #f33c3c;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 5px;
+
+      &:hover {
+        color: #f33c3c;
+      }
+    }
+  }
+}

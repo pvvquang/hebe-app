@@ -1,0 +1,44 @@
+@use "../../../assets/scss/" as *;
+
+.nav__product-list {
+  padding: 70px 0 50px;
+  text-align: center;
+}
+
+.nav__product-item {
+  background: transparent;
+  color: #999;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 0 18px;
+  transition: all 0.35s ease-in;
+  position: relative;
+
+  &::before {
+    @include underLine(0, 2px, $primary-color);
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.35s ease-in;
+  }
+
+  &.active {
+    color: #000;
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    color: #000;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+
+  & + & {
+    margin-left: 42px;
+  }
+}

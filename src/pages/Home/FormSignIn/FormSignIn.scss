@@ -1,0 +1,87 @@
+@use "../../../assets/scss/" as *;
+
+.signIn {
+  &__wrap {
+    background-color: #ecf6f1;
+    margin-top: 30px;
+  }
+
+  &__text {
+    @include dFlex(center, flex-start);
+    padding: 20px 0 30px;
+
+    @include mobile {
+      padding: 20px 0 0;
+    }
+
+    & > ion-icon {
+      font-size: 140px;
+      color: $text-black;
+      margin: 0 36px 0 42px;
+
+      @include tablet {
+        margin: 0 24px 0 24px;
+      }
+
+      @include mobile {
+        font-size: 80px;
+      }
+    }
+
+    & > span {
+      font-size: 22px;
+      color: $text-black;
+      line-height: 34px;
+
+      @include tablet {
+        font-size: 18px;
+      }
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__form {
+    width: 60%;
+    position: relative;
+    padding-top: 68px;
+    margin-left: 126px;
+
+    @include tablet {
+      width: 72%;
+      margin-left: 40px;
+    }
+
+    @include mobile {
+      width: 90%;
+      margin-left: 5%;
+      padding-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    & > input {
+      font-size: 14px;
+      color: $text-color;
+      background-color: #ecf6f1;
+      padding-bottom: 12px;
+      padding-right: 32px;
+      border-bottom: 2px solid #000;
+      width: 100%;
+    }
+
+    & > ion-icon {
+      font-size: 28px;
+      color: #000;
+      position: absolute;
+      top: 68px;
+      right: 0;
+      cursor: pointer;
+
+      @include mobile {
+        top: 40px;
+      }
+    }
+  }
+}

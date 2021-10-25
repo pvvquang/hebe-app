@@ -1,0 +1,43 @@
+@mixin dFlex($alignItems, $justifyContent) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin underLine($width, $height, $color) {
+  position: absolute;
+  content: "";
+  display: block;
+  width: $width;
+  height: $height;
+  background-color: $color;
+}
+
+@mixin pc {
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin pcSmall {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tabletMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 575px) {
+    @content;
+  }
+}

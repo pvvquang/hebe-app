@@ -1,0 +1,40 @@
+@use "../../../assets/scss/" as *;
+
+.banners {
+  height: 465px;
+  background-color: #b1b1b1;
+  background-image: url("../../../assets/img/men-jackets.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 72% top;
+  position: relative;
+
+  @include mobile {
+    background-position: 80% bottom;
+  }
+
+  &__warp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__title {
+    font-size: 60px;
+    font-weight: 300;
+    color: $text-white;
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    color: $text-white;
+    font-size: 14px;
+    @include dFlex(center, center);
+    margin-bottom: 0;
+
+    ion-icon {
+      margin: 0 10px;
+    }
+  }
+}

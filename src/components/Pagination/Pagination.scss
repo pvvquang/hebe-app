@@ -1,0 +1,33 @@
+@use "../../assets/scss/" as *;
+
+.pagination {
+  padding: 49px 0;
+
+  &__btn {
+    font-size: 16px;
+    color: $text-color;
+    font-weight: 600;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 1px solid #cfcfcf;
+    transition: all 0.35s ease-in;
+
+    & + & {
+      margin-left: 9px;
+    }
+
+    &.next {
+      padding: 7px 12px;
+      @include dFlex(center, center);
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+    }
+
+    &.active {
+      color: #000;
+      border-color: #000;
+    }
+  }
+}

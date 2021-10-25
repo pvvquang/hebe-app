@@ -1,0 +1,79 @@
+@use "../../assets/scss/" as *;
+
+.banner__img {
+  margin-top: 80px;
+  background-image: url("../../assets/img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 26%;
+  position: relative;
+
+  @include tablet {
+    padding-top: 32%;
+  }
+
+  @include mobile {
+    padding-top: 50%;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 6%;
+    bottom: 6%;
+    left: 1.85%;
+    right: 1.85%;
+    border: 1px solid $text-white;
+  }
+
+  &-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    text-align: center;
+
+    @include tabletMd {
+      width: 60%;
+    }
+
+    @include mobile {
+      width: 80%;
+    }
+
+    &-desc {
+      font-size: 40px;
+      line-height: 55px;
+      color: $text-white;
+      font-weight: 300;
+      margin-bottom: 36px;
+
+      @include pcSmall {
+        margin-bottom: 28px;
+      }
+
+      @include tablet {
+        font-size: 28px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+
+      @include mobile {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+    }
+
+    &-link {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      color: $text-white;
+      padding-bottom: 10px;
+      border-bottom: 2px solid $text-white;
+    }
+  }
+}

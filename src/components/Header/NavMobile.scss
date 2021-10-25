@@ -1,0 +1,79 @@
+@use "../../assets/scss/" as *;
+
+.mobile__nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  opacity: 0;
+  transition: all 0.35s ease-in;
+  transform: translateX(-100%);
+
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  &-search {
+    position: relative;
+    z-index: 31;
+    width: 90%;
+    margin: 1rem auto;
+
+    ion-icon {
+      position: absolute;
+      top: 50%;
+      left: 18px;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: #3c3c3c;
+    }
+
+    &-input {
+      color: rgb(134, 134, 134);
+      font-size: 14px;
+      line-height: 1.2;
+      padding: 17px 16px 17px 52px;
+      width: 100%;
+    }
+  }
+
+  &-list {
+    position: relative;
+    z-index: 31;
+    padding: 0 1rem;
+  }
+
+  &-item {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    margin: 8px 0;
+    transition: all 0.35s ease;
+
+    &:hover {
+      background-color: #f1f1f1;
+      color: #010101;
+    }
+
+    & > a {
+      display: block;
+    }
+  }
+}
+
+.signIn-btn {
+  display: block;
+  margin: 1rem auto;
+}
+
+.btn-close {
+  position: absolute;
+  top: 16px;
+  right: 8px;
+  font-size: 26px;
+  color: darkred;
+}

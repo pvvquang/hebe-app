@@ -1,0 +1,112 @@
+@use "../../assets/scss/" as *;
+
+.slide__content {
+  background-color: #95999c;
+  text-align: center;
+
+  .wrap {
+    position: relative;
+    padding-top: 60%;
+    width: 100%;
+
+    @include pcSmall {
+      padding-top: 72%;
+    }
+
+    @include tablet {
+      padding-top: 80%;
+    }
+
+    @include mobile {
+      padding-top: 170%;
+    }
+  }
+
+  &-img {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+
+    @include pcSmall {
+      right: 5%;
+    }
+
+    @include tablet {
+      right: 0;
+      width: 300px;
+      height: 300px;
+      top: 55%;
+    }
+
+    @include mobile {
+      top: 40%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+  &-wrap {
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    transform: translateY(-50%);
+
+    @include pcSmall {
+      left: 5%;
+    }
+
+    @include tablet {
+      left: 0;
+      top: 55%;
+    }
+
+    @include mobile {
+      top: 80%;
+      width: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &-desc {
+    font-size: 20px;
+    color: $text-white;
+    margin-bottom: 10px;
+
+    @include mobile {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &-title {
+    color: $text-white;
+    font-size: 60px;
+    font-weight: 300;
+    margin-bottom: 30px;
+
+    @include mobile {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.slide-btn {
+  width: 180px;
+
+  @include mobile {
+    width: 140px;
+  }
+
+  & + & {
+    margin-left: 12px;
+  }
+}

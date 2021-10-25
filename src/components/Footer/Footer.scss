@@ -1,0 +1,225 @@
+@use "../../assets/scss/" as *;
+
+.footer {
+  background-color: #151515;
+
+  &__wrap {
+    padding-top: 52px;
+    padding-bottom: 52px;
+    border-bottom: 1px solid #2b2b2b;
+  }
+
+  &__nav {
+    @include dFlex(center, flex-start);
+    padding-top: 28px;
+
+    &-list {
+      width: 50%;
+
+      @include tablet {
+        text-align: center;
+      }
+
+      & > h3 {
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding-bottom: 14px;
+        margin-bottom: 26px;
+        position: relative;
+        letter-spacing: 2px;
+
+        &::before {
+          @include underLine(48px, 1px, $primary-color);
+          top: 100%;
+          left: 0;
+
+          @include tablet {
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+
+    &-item {
+      font-size: 14px;
+      display: block;
+      color: $text-color;
+
+      & + & {
+        margin-top: 18px;
+      }
+    }
+  }
+
+  &__logo {
+    @include dFlex(center, center);
+    flex-direction: column;
+    padding: 28px 0 34px;
+    border-left: 1px solid #2b2b2b;
+    border-right: 1px solid #2b2b2b;
+
+    @include tablet {
+      padding: 40px 0 0;
+      border: none;
+    }
+
+    &-name {
+      font-size: 40px;
+      font-weight: bold;
+      color: $text-white;
+      letter-spacing: 0;
+    }
+
+    &-desc {
+      color: #616161;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      padding-top: 22px;
+    }
+  }
+
+  &__form {
+    padding-top: 28px;
+    text-align: center;
+
+    &-title {
+      font-size: 18px;
+      color: $text-white;
+      font-weight: 600;
+    }
+
+    &-desc {
+      padding-top: 20px;
+      font-size: 14px;
+      color: $text-color;
+    }
+
+    & > form {
+      position: relative;
+      display: inline-block;
+      width: 93%;
+
+      button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        border: none;
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #000;
+        background-color: $primary-color;
+        letter-spacing: 2px;
+        width: 105px;
+        transition: all 0.45s ease-in-out;
+
+        @include pcSmall {
+          width: 80px;
+        }
+
+        @include pcSmall {
+          width: 105px;
+        }
+
+        &:hover {
+          box-shadow: inset 120px 0 0 #20b2aa;
+          color: #fff;
+        }
+      }
+    }
+
+    & input {
+      font-size: 14px;
+      background-color: #151515;
+      border: 2px solid $text-color;
+      padding: 17px 105px 17px 30px;
+      width: 100%;
+      color: $text-color;
+
+      @include pcSmall {
+        padding: 17px 80px 17px 30px;
+      }
+    }
+  }
+
+  &__bottom {
+    &-social {
+      padding: 12px 0;
+
+      @include tablet {
+        padding: 12px 0 0;
+      }
+
+      @include mobile {
+        padding: 12px 0;
+        text-align: center;
+      }
+
+      & > a {
+        display: inline-block;
+        text-align: center;
+        font-size: 18px;
+        line-height: 45px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 1px solid currentColor;
+        transition: all 0.35s ease;
+        margin-right: 12px;
+        color: $text-color;
+
+        &:hover {
+          background-color: #f33c3c;
+          border-color: transparent;
+          color: #fff;
+        }
+      }
+    }
+
+    &-text {
+      @include dFlex(center, center);
+      height: 100%;
+      font-size: 13px;
+      color: $text-color;
+
+      @include tabletMd {
+        padding: 12px 0;
+        justify-content: flex-end;
+      }
+
+      @include mobile {
+        justify-content: center;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    &-pay {
+      @include dFlex(center, flex-end);
+      height: 77px;
+
+      @include mobile {
+        height: 60px;
+      }
+
+      & > img {
+        @include pcSmall {
+          width: 80%;
+        }
+
+        @include tablet {
+          width: 60%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

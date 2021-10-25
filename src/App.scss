@@ -1,0 +1,28 @@
+@use "./assets/scss/" as *;
+
+body {
+  font-size: 100%;
+  line-height: 1;
+  color: $text-color;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+textarea,
+button {
+  border: none;
+  outline: none;
+}

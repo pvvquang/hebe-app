@@ -1,0 +1,54 @@
+@use "../../../assets/scss/" as *;
+
+.filter-bar {
+  padding: 35px 0 27px;
+
+  &__list {
+    @include dFlex(center, flex-start);
+  }
+
+  &__title {
+    @include dFlex(center, center);
+
+    ion-icon {
+      padding: 15px;
+      border-radius: 50%;
+      color: #fff;
+      background-color: $primary-color;
+      font-size: 20px;
+    }
+
+    &-text {
+      font-size: 14px;
+      font-weight: bold;
+      color: #000;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 37px;
+      background-color: #f0f0f0;
+      border-radius: 30px;
+      padding: 0 22px 0 40px;
+      margin-left: -31px;
+    }
+  }
+
+  &__item {
+    font-size: 14px;
+    color: $text-white;
+    @include dFlex(center, center);
+    background-color: $primary-color;
+    border-radius: 30px;
+    padding: 3px 15px 3px 12px;
+    margin-left: 9px;
+
+    ion-icon {
+      margin-right: 4px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+
+  &__select {
+    @include dFlex(center, flex-end);
+  }
+}

@@ -1,0 +1,33 @@
+@use "../../assets/scss/" as *;
+
+.coupon-code {
+  background-color: #84bdbe;
+
+  &__wrap {
+    height: 45px;
+    position: relative;
+    @include dFlex(center, center);
+  }
+
+  &__text {
+    font-size: 16px;
+    color: $text-white;
+    text-align: center;
+    margin-bottom: 0;
+
+    @include mobile {
+      width: 80%;
+      font-size: 14px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: transparent;
+    font-size: 24px;
+    color: $text-white;
+  }
+}
