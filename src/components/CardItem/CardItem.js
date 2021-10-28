@@ -1,21 +1,27 @@
-import React, { useContext, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../app/Context/AppProvider";
 import ConvertUnit from "../../util/ConvertUnit";
 import "./CardItem.scss";
 
-function CardItem({ item }) {
-  const { unit } = useContext(AppContext);
+function CardItem({ item, products, pagination }) {
+  const { unit, sortPrice } = useContext(AppContext);
   const [active, setActive] = useState(false);
+  const [moneyUnit, setMoneyUnit] = useState(`$ ${item.price_new}`);
 
-  const currencyUnit = useMemo(() => {
+  useEffect(() => {
+    let unitConvert = "";
+
     switch (unit) {
       case "VND":
-        return `${ConvertUnit(item.price_new)}đ`;
+        unitConvert = `${ConvertUnit(item.price_new)}đ`;
+        break;
       default:
-        return `$ ${item.price_new}.00`;
+        unitConvert = `$ ${item.price_new}.00`;
     }
-  }, [unit]);
+
+    setMoneyUnit(unitConvert);
+  }, [unit, sortPrice, pagination, products]);
 
   return (
     <div className="card__item">
@@ -46,7 +52,7 @@ function CardItem({ item }) {
       <Link to="" className="card__item-title">
         {item.name}
       </Link>
-      <p className="card__item-price">{currencyUnit}</p>
+      <p className="card__item-price">{moneyUnit}</p>
     </div>
   );
 }

@@ -6,13 +6,18 @@ import { AppContext } from "../../../app/Context/AppProvider";
 const { Option } = Select;
 
 const sortFilters = [
-  "Sort by popularity",
-  "Price: low to hight",
-  "Price: hight to low",
+  {
+    name: "Price: low to hight",
+    type: "ascending",
+  },
+  {
+    name: "Price: hight to low",
+    type: "descending",
+  },
 ];
 
 function CollectionFilter() {
-  const { filters, setFilters } = useContext(AppContext);
+  const { filters, setFilters, setSortPrice } = useContext(AppContext);
   const [listFilter, setListFilter] = useState([]);
 
   useEffect(() => {
@@ -20,7 +25,7 @@ function CollectionFilter() {
   }, [filters]);
 
   const handleChange = (value) => {
-    console.log(`selected ${value}`);
+    setSortPrice(value);
   };
 
   const handleClick = (item, index) => {
@@ -69,7 +74,9 @@ function CollectionFilter() {
             onChange={handleChange}
           >
             {sortFilters.map((filter) => (
-              <Option key={filter}>{filter}</Option>
+              <Option value={filter.type} key={filter.name}>
+                {filter.name}
+              </Option>
             ))}
           </Select>
         </div>

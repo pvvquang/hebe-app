@@ -77,6 +77,25 @@ function Header(props) {
   }, []);
 
   useEffect(() => {
+    const dropdownElement = document.getElementsByClassName(
+      "header__info-dropdown"
+    );
+    function handleClick() {
+      this.classList.toggle("active");
+    }
+
+    [...dropdownElement].forEach((ele) =>
+      ele.addEventListener("click", handleClick)
+    );
+
+    return () => {
+      [...dropdownElement].forEach((ele) =>
+        ele.removeEventListener("click", handleClick)
+      );
+    };
+  }, []);
+
+  useEffect(() => {
     const mobileNav = document.querySelector(".header__mobile");
     const mobileNavItems = document.getElementsByClassName("mobile__nav-item");
     function handleClick() {

@@ -125,7 +125,7 @@ const prices = [
   },
   {
     name: "Price: low to hight",
-    type: "decrease",
+    type: "descending",
   },
   {
     name: "Price: hight to low",
@@ -201,10 +201,15 @@ function CategoryColor() {
 }
 
 function CategoryPrice() {
-  const [value, setValue] = useState([10, 3450]);
+  const [value, setValue] = useState([10, 1000]);
+  const { setSortMimax } = useContext(AppContext);
 
-  function onChange(value) {
+  function handleChange(value) {
     setValue(value);
+  }
+
+  function handleAfterChange(value) {
+    setSortMimax(value);
   }
 
   return (
@@ -214,10 +219,11 @@ function CategoryPrice() {
         <Slider
           range
           step={1}
-          defaultValue={[10, 3450]}
+          defaultValue={[10, 1000]}
           min={10}
-          max={3450}
-          onChange={onChange}
+          max={1000}
+          onChange={handleChange}
+          onAfterChange={handleAfterChange}
         />
         <p className="category__price-desc">{`Price: $${value[0]} — $${value[1]}`}</p>
       </div>

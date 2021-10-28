@@ -6,6 +6,8 @@ function AppProvider({ children }) {
   const [unit, setUnit] = useState("USD");
   const [showCouponCode, setShowCouponCode] = useState(true);
   const [filters, setFilters] = useState({});
+  const [sortPrice, setSortPrice] = useState("");
+  const [sortMimax, setSortMimax] = useState([]);
 
   return (
     <AppContext.Provider
@@ -16,6 +18,10 @@ function AppProvider({ children }) {
         setShowCouponCode,
         filters,
         setFilters,
+        sortPrice,
+        setSortPrice,
+        sortMimax,
+        setSortMimax,
       }}
     >
       {children}

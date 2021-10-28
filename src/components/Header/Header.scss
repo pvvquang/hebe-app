@@ -208,7 +208,7 @@
       &-list {
         position: absolute;
         width: 160px;
-        top: 50%;
+        top: 150%;
         left: 0;
         background-color: #fff;
         padding: 1rem;
@@ -253,7 +253,7 @@
         }
       }
 
-      &:hover &-list {
+      &.active &-list {
         visibility: visible;
         opacity: 1;
         top: 110%;
